@@ -15,12 +15,10 @@ function AddMusic() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Create FormData to send file data
     const formData = new FormData();
     formData.append('songName', songName);
     formData.append('file', file);
 
-    // Replace 'your-api-endpoint' with the actual endpoint where you want to store data
     const apiUrl = 'your-api-endpoint';
 
     try {
@@ -31,7 +29,6 @@ function AddMusic() {
 
       if (response.ok) {
         console.log('Data successfully uploaded to the API');
-        // You can reset the form or update the state as needed
         setSongName('');
         setFile(null);
       } else {
